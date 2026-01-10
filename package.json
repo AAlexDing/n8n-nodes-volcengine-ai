@@ -46,7 +46,7 @@
       "dist/credentials/VolcEngineAiApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/VolcengineAi/VolcengineAi.node.js",
+      "dist/nodes/VolcEngineAI/VolcengineAi.node.js",
       "dist/nodes/VolcengineAiChain/VolcengineAiChain.node.js"
     ]
   },
