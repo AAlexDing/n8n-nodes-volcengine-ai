@@ -4,7 +4,7 @@ import type {
 	INodeProperties,
 } from 'n8n-workflow';
 
-export class VolcengineAiApi implements ICredentialType {
+export class VolcEngineAiApi implements ICredentialType {
 	name = 'volcengineAiApi';
 
 	displayName = 'VolcEngine AI API';

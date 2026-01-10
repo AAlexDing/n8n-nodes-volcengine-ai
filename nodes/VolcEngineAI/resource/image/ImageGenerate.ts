@@ -50,14 +50,10 @@ const ImageGenerate: ResourceOperations = {
 		{
 			displayName: 'Model',
 			name: 'model',
-			type: 'options',
-			default: 'doubao-seedream-4-0-250828',
-			options: [
-				{ name: 'doubao-seedream-4.0', value: 'doubao-seedream-4-0-250828' },
-				{ name: 'doubao-seedream-3.0-t2i', value: 'doubao-seedream-3-0-t2i-250415' },
-				{ name: 'doubao-seededit-3.0-i2i', value: 'doubao-seededit-3-0-i2i-250628' },
-			],
-			description: 'Model ID (you can replace with the latest version)',
+			type: 'string',
+			default: 'doubao-seedream-4-5-251128',
+			placeholder: 'doubao-seedream-4-5-251128',
+			description: 'Model ID. Common models: doubao-seedream-4-5-251128, doubao-seedream-4-0-250828, doubao-seedream-3-0-t2i-250415, doubao-seededit-3-0-i2i-250628.',
 		},
 		{
 			displayName: 'Prompt',
@@ -299,7 +295,7 @@ const ImageGenerate: ResourceOperations = {
 			if (typeof seed === 'number' && seed !== -1) body.seed = seed;
 			if (typeof guidanceScale === 'number' && guidanceScale > 0) body.guidance_scale = guidanceScale;
 		}
-		if (model.startsWith('doubao-seedream-4-0')) {
+		if (model.startsWith('doubao-seedream-4')) {
 			if (sequentialImageGeneration) body.sequential_image_generation = sequentialImageGeneration;
 			if (sequentialImageGeneration === 'auto' && typeof maxImages === 'number') {
 				body.sequential_image_generation_options = { max_images: maxImages };
