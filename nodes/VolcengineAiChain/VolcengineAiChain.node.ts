@@ -22,7 +22,7 @@ export class VolcengineAiChain implements INodeType {
 		name: 'volcengineAiChain',
 		icon: { light: 'file:volcengine.logo.svg', dark: 'file:volcengine.logo.svg' },
 		group: ['transform'],
-		version: [1, 1.1, 1.2],
+		version: [1, 2, 3],
 		description: 'For advanced usage with an AI chain',
 		defaults: {
 			name: 'VolcengineAi Chat Model',
@@ -96,7 +96,7 @@ export class VolcengineAiChain implements INodeType {
 				default: 'deepseek-v3-1-250821',
 				displayOptions: {
 					hide: {
-						'@version': [{ _cnd: { gte: 1.2 } }],
+						'@version': [{ _cnd: { gte: 3 } }],
 					},
 				},
 			},
@@ -127,7 +127,7 @@ export class VolcengineAiChain implements INodeType {
 				description: 'Select VolcEngine AI model, you can choose from the list or directly enter the model ID [VolcEngine AI Models](https://www.volcengine.com/docs/82379/1330310)',
 				displayOptions: {
 					hide: {
-						'@version': [{ _cnd: { lte: 1.1 } }],
+						'@version': [{ _cnd: { lte: 2 } }],
 					},
 				},
 			},
@@ -285,7 +285,7 @@ export class VolcengineAiChain implements INodeType {
 
 		const version = this.getNode().typeVersion;
 		const modelName =
-			version >= 1.2
+			version >= 3
 				? (this.getNodeParameter('model.value', itemIndex) as string)
 				: (this.getNodeParameter('model', itemIndex) as string);
 
